@@ -1,0 +1,67 @@
+﻿@model Student
+@{
+    Layout = null;
+    SelectList deptsl = new SelectList(ViewBag.depts, "DeptId", "DeptName");
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <form asp-action="create" asp-controller="student" method="post" class="needs-validation">
+        @*Name*@
+        <div class="mb-3">
+            <label asp-for="Name" class="form-label">Student Name</label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        @*age*@
+        <div class="mb-3">
+            <label asp-for="Age" class="form-label">Student Age</label>
+            <input asp-for="Age" class="form-control" />
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+        @*email*@
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Student Email</label>
+            <input asp-for="Email" class="form-control" />
+             <span asp-validation-for="Email" class="text-danger"></span>
+            @*@Html.ValidationMessage(Model.Email,"",new { @class="text-danger"})*@
+        </div>
+        @*password*@
+        <div class="mb-3">
+            <label asp-for="Password" class="form-label">Password</label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+        @*confirm password*@
+        <div class="mb-3">
+            <label asp-for="CPassword" class="form-label">Confirm Password</label>
+            <input asp-for="CPassword" class="form-control" />
+            <span asp-validation-for="CPassword" class="text-danger"></span>
+        </div>
+        @*Dept*@
+        <div class="mb-3">
+            <label asp-for="DeptNo" class="form-label">Department</label>
+            <select asp-for="DeptNo" class="form-control" asp-items="deptsl">
+                 
+            </select>
+            
+        </div>
+        @*submit*@
+        <div class="mt-4 text-center">
+            <input type="submit" class="btn btn-primary" value="Add" />
+        </div>
+
+    </form>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@model Department
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Update</title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    @if (Model != null)
+    {
+        <form action="/department/update" method="post" class="needs-validation">
+
+            <div class="mb-3">
+                <label for="DeptId" class="form-label">Department ID</label>
+                <input type="text" name="DeptId" class="form-control" value="@Model.DeptId" readonly />
+            </div>
+
+            <div class="mb-3">
+                <label for="DeptName" class="form-label">Department Name</label>
+                <input type="text" name="DeptName" class="form-control" value="@Model.DeptName" />
+            </div>
+
+            <div class="mb-3">
+                <label for="Capacity" class="form-label">Capacity</label>
+                <input type="text" name="Capacity" class="form-control" value="@Model.Capacity" />
+            </div>
+
+            <div class="mt-4 text-center">
+                <input type="submit" class="btn btn-primary" value="Update" />
+            </div>
+
+        </form>
+
+    }
+    else
+    {
+        <h1>Error occured</h1>
+    }
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

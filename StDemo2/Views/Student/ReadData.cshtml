@@ -1,0 +1,43 @@
+﻿@model Student
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ReadData</title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Dept No</th>
+                
+
+
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.Name</td>
+                <td>@Model.Age</td>
+                <td>@Model.Email</td>
+                <td>@Model.DeptNo</td>
+                        
+            </tr>
+                
+            
+        </tbody>
+    </table>
+</body>
+</html>

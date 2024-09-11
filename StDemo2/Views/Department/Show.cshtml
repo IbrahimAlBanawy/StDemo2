@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+
+    Department dept = new Department() { DeptId = 400, DeptName = "IS", Capacity = 40 };
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show</title>
+</head>
+<body>
+     <div>
+         @dept.DeptId : @dept.DeptName : @dept.Capacity
+     </div>
+</body>
+</html>
